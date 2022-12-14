@@ -5,17 +5,12 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { styled } from '@mui/material/styles';
 import { Avatar, ButtonBase, ButtonGroup, ButtonProps, Card, CardActions, CardMedia, Divider, IconButton } from '@mui/material';
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
-
-const IconButtonWithBackground = styled(IconButton)(({ theme }) => ({
+const SkillButton = styled(IconButton)(({ theme }) => ({
     backgroundColor: theme.palette.text.primary,
+    // On hover, the background color is slightly darkened.
+    '&:hover': {
+        backgroundColor: theme.palette.text.secondary,
+    },
 }));
 
 const CharacterCard = () => {
@@ -52,72 +47,86 @@ const TestCard = () => {
 
 export default function Game() {
     return (
-        <Grid container spacing={3} columns={9} height="720px" width="100%" style={{
-            border: '1px solid black',
+        <Paper sx={{
+            width: '100%'
         }}>
-            <Grid xs={1}>
-                <Item style={{ height: '95%' }}>Left Bar</Item>
-            </Grid>
-            <Grid xs={7}>
-                <Grid container spacing={2} columns={7} height="50%">
-                    <Grid xs={0.4} />
-                    <Grid xs={1.2} height="70%">
-                        <Grid container spacing={3} columns={2} height="100px">
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                        </Grid>
+            <Grid container spacing={2} columns={7} padding={1}>
+                <Grid xs={0.4} />
+                <Grid xs={1.2}>
+                    <Grid container spacing={3} columns={2}>
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
                     </Grid>
-                    <Grid xs={0.4} />
-                    <CharacterCard />
-                    <CharacterCard />
-                    <CharacterCard />
-                    <Grid xs={0.4} />
-                    <Grid xs={1.2} height="70%">
-                        <Grid container spacing={3} columns={2} height="100px">
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                        </Grid>
-                    </Grid>
-                    <Grid xs={0.4} />
                 </Grid>
-                {/* Divider */}
-                <Divider orientation="horizontal" flexItem />
-                {/* Player Area 2 */}
-                <Grid container spacing={2} columns={7} height="50%" sx={{
-                    alignItems: 'flex-end',
-                }}>
-                    <Grid xs={0.4} />
-                    <Grid xs={1.2} height="70%">
-                        <Grid container spacing={3} columns={2} height="100px">
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                        </Grid>
+                <Grid xs={0.4} />
+                <CharacterCard />
+                <CharacterCard />
+                <CharacterCard />
+                <Grid xs={0.4} />
+                <Grid xs={1.2}>
+                    <Grid container spacing={3} columns={2}>
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
                     </Grid>
-                    <Grid xs={0.4} />
-                    <CharacterCard />
-                    <CharacterCard />
-                    <CharacterCard />
-                    <Grid xs={0.4} />
-                    <Grid xs={1.2} height="70%">
-                        <Grid container spacing={3} columns={2} height="100px">
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                            <TestCard />
-                        </Grid>
+                </Grid>
+                <Grid xs={0.4} />
+            </Grid>
+            {/* Divider */}
+            <Divider orientation="horizontal" flexItem />
+            {/* Player Area 2 */}
+            <Grid container spacing={2} columns={7} padding={1}>
+                <Grid xs={0.4} />
+                <Grid xs={1.2}>
+                    <Grid container spacing={3} columns={2}>
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
                     </Grid>
-                    <Grid xs={0.4} />
+                </Grid>
+                <Grid xs={0.4} />
+                <CharacterCard />
+                <CharacterCard />
+                <CharacterCard />
+                <Grid xs={0.4} />
+                <Grid xs={1.2}>
+                    <Grid container spacing={3} columns={2}>
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
+                        <TestCard />
+                    </Grid>
+                </Grid>
+                <Grid xs={0.4} />
+            </Grid>
+            {/* Divider */}
+            <Divider orientation="horizontal" flexItem />
+            <Grid container spacing={2} padding={2} justifyContent="center">
+                <Grid>
+                    <SkillButton>
+                        <Avatar src='https://webstatic-sea.hoyoverse.com/hk4e/e20221205drawcard/picture/5d510bb74d2c14e2fe53edbdfc955ba4.png' />
+                    </SkillButton>
+                </Grid>
+                <Grid>
+                    <SkillButton>
+                        <Avatar src='https://webstatic-sea.hoyoverse.com/hk4e/e20221205drawcard/picture/80d61bdb70eef0d57ca877bb39dbb0d9.png' />
+                    </SkillButton>
+                </Grid>
+                <Grid>
+                    <SkillButton>
+                        <Avatar src='https://webstatic-sea.hoyoverse.com/hk4e/e20221205drawcard/picture/5d510bb74d2c14e2fe53edbdfc955ba4.png' />
+                    </SkillButton>
+                </Grid>
+                <Grid>
+                    <SkillButton>
+                        <Avatar src='https://webstatic-sea.hoyoverse.com/hk4e/e20221205drawcard/picture/fcda5c89f7d783e8bff69719c0d30692.png' />
+                    </SkillButton>
                 </Grid>
             </Grid>
-            <Grid xs={1}>
-                <Item style={{ height: '95%' }}>Right Bar</Item>
-            </Grid>
-        </Grid>
+        </Paper>
     )
 }
