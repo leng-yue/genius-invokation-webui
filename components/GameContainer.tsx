@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Game from "./Game";
 
-
 // Calculate the height of the game container
 // Max width is 1280px, and max height is 720px
 const GameContainerDiv = styled.div`
@@ -11,12 +10,12 @@ const GameContainerDiv = styled.div`
   justify-content: center;
   align-items: center;
   /* w:h is 16:9 */
-  height: min(calc(100vh - 64px), calc((100vw - 64px) * 9 / 16));
-  width: min(calc((100vh - 64px) * 16 / 9), calc(100vw - 64px));
+  height: min(calc(100vh - 16px), calc((100vw - 16px) * 9 / 16));
+  width: min(calc((100vh - 16px) * 16 / 9), calc(100vw - 16px));
 `;
 
 // Require user to rotate the screen to landscape mode
-  const AlertText = styled.div`
+const AlertText = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: #000000;
