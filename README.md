@@ -1,3 +1,5 @@
+12/18: 该项目仍在开发 (没有暴毙), 但是我最近这两周比较忙...
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
